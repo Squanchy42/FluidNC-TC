@@ -15,10 +15,10 @@ axes:
     steps_per_mm: 80
     max_rate_mm_per_min: 300
     acceleration_mm_per_sec2: 20
-    max_travel_mm: 300
+    max_travel_mm: 400
     soft_limits: true
     homing:
-      cycle: 1
+      cycle: 3
       mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 200
@@ -43,10 +43,10 @@ axes:
     steps_per_mm: 800
     max_rate_mm_per_min: 200
     acceleration_mm_per_sec2: 10
-    max_travel_mm: 350
+    max_travel_mm: 550
     soft_limits: true
     homing:
-      cycle: 1
+      cycle: 2
       mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 200
@@ -69,15 +69,15 @@ axes:
 
   z:
     steps_per_mm: 80
-    max_rate_mm_per_min: 350
+    max_rate_mm_per_min: 300
     acceleration_mm_per_sec2: 20
-    max_travel_mm: 600
+    max_travel_mm: 400
     soft_limits: true
     homing:
       cycle: 1
       mpos_mm: 0
       positive_direction: false
-      seek_mm_per_min: 300
+      seek_mm_per_min: 200
       feed_mm_per_min: 50
       settle_ms: 250
       seek_scale: 1.1
