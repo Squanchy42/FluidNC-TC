@@ -1,0 +1,199 @@
+name: "ESP32 Dev Controller V4"
+board: "ESP32 Dev Controller V4"
+
+stepping:
+  engine: RMT
+  idle_ms: 255
+  dir_delay_us: 0
+  pulse_us: 4
+  disable_delay_us: 0
+
+axes:
+  shared_stepper_disable_pin: NO_PIN
+  
+  x:
+    steps_per_mm: 1600
+    max_rate_mm_per_min: 300
+    acceleration_mm_per_sec2: 10
+    max_travel_mm: 700
+    soft_limits: true
+    homing:
+      cycle: 2
+      mpos_mm: 0
+      positive_direction: false
+      seek_mm_per_min: 200
+      feed_mm_per_min: 50
+      settle_ms: 250
+      seek_scale: 1.1
+      feed_scale: 1.1
+    
+    motor0:
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      limit_all_pin: gpio.4:low:pu
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        direction_pin: gpio.14
+        step_pin: gpio.13:low
+    motor1:
+      null_motor:
+
+  y:
+    steps_per_mm: 800
+    max_rate_mm_per_min: 180
+    acceleration_mm_per_sec2: 10
+    max_travel_mm: 205
+    soft_limits: true
+    homing:
+      cycle: 2
+      mpos_mm: 0
+      positive_direction: false
+      seek_mm_per_min: 200
+      feed_mm_per_min: 50
+      settle_ms: 250
+      seek_scale: 1.1
+      feed_scale: 1.1
+
+    motor0:
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      limit_all_pin: gpio.16:low:pu
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        direction_pin: gpio.26
+        step_pin: gpio.27:low
+    motor1:
+      null_motor:
+
+  z:
+    steps_per_mm: 6000
+    max_rate_mm_per_min: 70
+    acceleration_mm_per_sec2: 10
+    max_travel_mm: 60
+    soft_limits: true
+    homing:
+      cycle: 1
+      mpos_mm: 0
+      positive_direction: true
+      seek_mm_per_min: 60
+      feed_mm_per_min: 50
+      settle_ms: 250
+      seek_scale: 1.1
+      feed_scale: 1.1
+
+    motor0:
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      limit_all_pin: gpio.17:low:pu
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        direction_pin: gpio.33
+        step_pin: gpio.25:low
+    motor1:
+      null_motor:
+
+  a:
+    steps_per_mm: 200
+    max_rate_mm_per_min: 300
+    acceleration_mm_per_sec2: 20
+    max_travel_mm: 300
+    soft_limits: true
+    homing:
+      cycle: 3
+      mpos_mm: 0
+      positive_direction: false
+      seek_mm_per_min: 200
+      feed_mm_per_min: 50
+      settle_ms: 250
+      seek_scale: 1.1
+      feed_scale: 1.1
+    
+    motor0:
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      limit_all_pin: gpio.5:low:pu
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        direction_pin: gpio.19
+        step_pin: gpio.18:low
+    motor1:
+      null_motor:
+
+  b:
+    steps_per_mm: 400
+    max_rate_mm_per_min: 60
+    acceleration_mm_per_sec2: 20
+    max_travel_mm: 10000000
+    soft_limits: false
+    motor0:
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      limit_all_pin: NO_PIN
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        direction_pin: gpio.21
+        step_pin: gpio.22:low
+    motor1:
+      null_motor:
+
+spi:
+  miso_pin: NO_PIN
+  mosi_pin: NO_PIN
+  sck_pin: NO_PIN
+
+sdcard:
+  cs_pin: NO_PIN
+  card_detect_pin: NO_PIN
+
+start:
+  must_home: false
+  check_limits: false
+
+PWM:
+  pwm_hz: 5000
+  output_pin: gpio.2:low
+  enable_pin: NO_PIN
+  direction_pin: NO_PIN
+  disable_with_s0: false
+  s0_with_disable: true
+  spinup_ms: 0
+  spindown_ms: 0
+  tool_num: 0
+  speed_map: 0=0% 10000=100%
+
+user_outputs:
+  analog0_pin: gpio.23
+  analog1_pin: NO_PIN
+  analog2_pin: NO_PIN
+  analog3_pin: NO_PIN
+  analog0_hz: 5000
+  analog1_hz: 5000
+  analog2_hz: 5000
+  analog3_hz: 5000
+  digital0_pin: gpio.32
+  digital1_pin: NO_PIN
+  digital2_pin: NO_PIN
+  digital3_pin: NO_PIN
+
+macros:
+  startup_line0:
+  startup_line1:
+  macro0: 
+  macro1: M67E0Q30&G91G21F60B60&M67E0Q0
+  macro2: M64P0&M65P0 
+  macro3: G91G21F400X100A100
+
+control:
+  safety_door_pin: NO_PIN
+  reset_pin: NO_PIN
+  feed_hold_pin: NO_PIN
+  cycle_start_pin: NO_PIN
+  macro0_pin: NO_PIN
+  macro1_pin: NO_PIN
+  macro2_pin: NO_PIN
+  macro3_pin: NO_PIN
